@@ -4,10 +4,16 @@ import AppSelect from '@/components/AppSelect.vue';
 
 import { LOCALES } from '../constants';
 import { useLocaleStore } from '@/stores/locale';
+import { storeToRefs } from 'pinia';
+import { useI18n } from 'vue-i18n';
 
-const { setLocale, appLocale } = useLocaleStore();
+const { locale } = useI18n();
+const localeStore = useLocaleStore();
+const { appLocale } = storeToRefs(localeStore);
+const { setLocale } = localeStore;
 
 const updateLocale = (value) => {
+  locale.value = value;
   setLocale(value);
 };
 </script>

@@ -13,11 +13,19 @@ import { createBootstrap } from 'bootstrap-vue-next'
 
 import { createI18n } from 'vue-i18n'
 import i18n from './i18n/locale'
-import ru from './i18n/locale/ru'
 
+import { useLocaleStore } from './stores/locale'
+
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+app.use(createBootstrap())
+
+const { appLocale } = useLocaleStore();
 
 const i18nConfig = createI18n({
-  locale: 'pt-BR',
+  locale: appLocale,
   messages: {
     en: i18n.en,
     'pt-BR': i18n.pt_BR,
@@ -51,12 +59,6 @@ const i18nConfig = createI18n({
     }
   }
 })
-
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-app.use(createBootstrap())
 app.use(i18nConfig)
 
 app.mount('#app')

@@ -2,10 +2,11 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useI18n } from 'vue-i18n';
 
+
+
 export const useLocaleStore = defineStore('appLocale', () => {
   // State
-  const { locale } = useI18n();
-  const appLocale = ref(localStorage.getItem('appLocale') || locale.value);
+  const appLocale = ref(localStorage.getItem('appLocale'));
 
   // Getters
   const getLocale = computed(() => {
@@ -21,7 +22,6 @@ export const useLocaleStore = defineStore('appLocale', () => {
   // Actions
   const setLocale = (newLocale) => {
     appLocale.value = newLocale;
-    locale.value = newLocale;
     localStorage.setItem('appLocale', newLocale);
   }
 
