@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { BFormSelect, BFormSelectOption } from 'bootstrap-vue-next';
+import AppSelect from '@/components/AppSelect.vue';
 
 import { useI18n } from 'vue-i18n';
 import { LOCALES } from './constants';
@@ -17,9 +18,9 @@ const { locale, t } = useI18n();
         <h2>{{ t('ITEMS_SECTION_TITLE') }}</h2>
       </div>
 
-      <BFormSelect v-model="locale" size="sm" class="w-auto py-2">
+      <AppSelect :model-value="locale" @update:model-value="value => { locale = value }">
         <BFormSelectOption v-for="locale in LOCALES" :value="locale.key">{{ locale.label }}</BFormSelectOption>
-      </BFormSelect>
+      </AppSelect>
 
     </header>
 

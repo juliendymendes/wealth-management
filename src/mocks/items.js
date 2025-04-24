@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-const items = Array.from({ length: 10 }).map(() => ({
+const items = Array.from({ length: 100 }).map(() => ({
   id: faker.string.uuid(),
   aggregate: faker.helpers.arrayElement([true, false]),
   assetTag: faker.string.numeric({ length: 10}),

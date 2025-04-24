@@ -8,10 +8,108 @@ $pagination-border-width: 2px;
 $pagination-focus-box-shadow: none;
 $pagination-border-radius: 4px;
 
-
 body {
   background-color: #FFF;
   font-family: Arial, Helvetica, sans-serif !important;
 }
 
+:root {
+  // Table dotted line styles
+  .dotted-line {
+    width: 10px;
+    height: 16px;
+    display: none;
+    position: absolute;
+    left: 12px;
+    top: 0;
+    margin-top: 5px;
+    border-left: 2px dashed #d3d3d3;
+    border-bottom: 2px dashed #d3d3d3;
+  }
+
+  .dotted-line-visible {
+    display: flex;
+  }
+
+  .dotted-cell {
+    width: 10px;
+    height: 145px;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    left: 12px;
+    margin-top: 20px;
+    border-left: 2px dashed #d3d3d3;
+    border-top: 2px dashed #d3d3d3;
+
+    @media (min-width: 576px) and (max-width: 768px) {
+      height: 145px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1400px) {
+      height: 120px;
+    }
+
+    @media (min-width: 1400px) {
+      height: 120px;
+    }
+  }
+
+  // Variant for the app button
+  .btn-white,
+  .btn-white:hover {
+    background-color: #fff;
+
+    --bs-button-border-width: var(--bs-border-width);
+    --bs-button-border-color: var(--bs-border-color-translucent);
+    --bs-button-border-radius: 3px;
+
+    border: var(--bs-button-border-width) solid var(--bs-button-border-color);
+    border-radius: var(--bs-button-border-radius);
+
+  }
+
+  // Transparent variant for the app button
+  .btn-transparent,
+  .btn-transparent:hover {
+    background-color: transparent;
+    border: none;
+  }
+
+  // Variant for the green badge
+  .text-bg-status-registered {
+    background-color: #F0FAE2;
+    color: #AFD297;
+    border: 1px solid #AFD297;
+  }
+
+  // Variant for the blue badge
+  .text-bg-light-blue {
+    background-color: #E3FFFF;
+    color: #87C8CA;
+    border: 1px solid #87C8CA;
+    font-weight: 500;
+  }
+
+  // Variant for the grey badge
+  .text-bg-grey {
+    background-color: #FCFCFC;
+    color: #8D8D8D;
+    border: 1px solid #8D8D8D;
+    font-weight: 500;
+  }
+
+  // Responsive font size
+  .fs-responsive {
+    font-size: 14px;
+
+    @media (min-width: 576px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
+}
 @import "bootstrap/scss/bootstrap";
