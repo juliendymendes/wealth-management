@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n';
 
 export const useLocaleStore = defineStore('appLocale', () => {
   // State
-  const appLocale = ref(localStorage.getItem('appLocale'));
+  const appLocale = ref(localStorage.getItem('appLocale') || 'pt-BR');
 
   // Getters
   const getLocale = computed(() => {
