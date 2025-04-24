@@ -1,0 +1,17 @@
+$light: #fafafa;
+
+$pagination-active-bg: #FAFEF6;
+$pagination-active-border-color: #B0C7C8;
+$pagination-active-color: #B0C7C8;
+$pagination-color: #909090;
+$pagination-border-width: 2px;
+$pagination-focus-box-shadow: none;
+$pagination-border-radius: 4px;
+
+
+body {
+  background-color: #FFF;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+@import "bootstrap/scss/bootstrap";
