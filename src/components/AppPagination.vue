@@ -34,7 +34,7 @@ const goToPage = (inputPage) => {
 </script>
 
 <template>
-  <div class="d-flex gap-3 justify-content-end">
+  <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-end">
     <div class="d-flex align-items-center mb-3 gap-2">
       <AppSelect :model-value="perPage" @update:model-value="value => emit('update:perPage', value)">
         <BFormSelectOption v-for="option in pageOptions" :key="option" :value="option">

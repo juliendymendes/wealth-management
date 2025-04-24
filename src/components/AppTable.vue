@@ -1,7 +1,7 @@
 <script setup>
 import Icon from '@/components/icons/Icon.vue';
 import { BButton, BTable } from 'bootstrap-vue-next';
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import items from '@/mocks/items';
 import { useI18n } from 'vue-i18n';
 import OpenDetailsCell from './table/OpenDetailsCell.vue';
@@ -89,6 +89,12 @@ const fields = computed(() => [
     tdClass: 'text-center',
   }
 ])
+
+watch(() => currentPage, (newValue, oldValue) => {
+  if (newValue != oldValue) {
+    expandedRowIndexes.value = []
+  }
+})
 </script>
 
 <template>

@@ -6,6 +6,7 @@ import Filters from '@/components/Filters.vue';
 import AppSelect from '@/components/AppSelect.vue';
 import AppTable from '@/components/AppTable.vue';
 import AppPagination from '@/components/AppPagination.vue';
+import ItemsPageHeader from '@/components/ItemsPageHeader.vue';
 const { t } = useI18n();
 
 const currentPage = ref(1);
@@ -19,6 +20,7 @@ const pageOptions = [5, 10, 20, 50, 100]
 
 <template>
   <main class="mt-5">
+    <ItemsPageHeader />
     <Filters />
     <div class="mt-5 d-flex flex-column gap-4 w-100">
       <div class="d-flex align-items-end align-self-end">
